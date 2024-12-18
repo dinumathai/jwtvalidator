@@ -19,8 +19,8 @@ go mod tidy
 
 ### Generate token
 1. Create an Azure AD Application
-1. Create secret for the Azure AD Application
-1. Generate token. Replace the `<tenant-id>`, `<client-id>` and `client-secret`
+2. Create secret for the Azure AD Application
+3. Generate token. Replace the `<tenant-id>`, `<client-id>` and `client-secret`
 ```
 curl --location 'https://login.microsoftonline.com/<tenant-id>/oauth2/v2.0/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
@@ -29,8 +29,8 @@ curl --location 'https://login.microsoftonline.com/<tenant-id>/oauth2/v2.0/token
 --data-urlencode 'client_id=<client-id>' \
 --data-urlencode 'client_secret=<client-secret>'
 ```
-1. Update the `expectedIssuer=<tenant-id>`, `expectedAudiences=<client-id>` and `tokenString=<token>` in [main.go](./main.go)
-1. Test
+4. Update the `expectedIssuer=<tenant-id>`, `expectedAudiences=<client-id>` and `tokenString=<token>` in [main.go](./main.go)
+5. Test
 ```
 go run main.do
 ```
